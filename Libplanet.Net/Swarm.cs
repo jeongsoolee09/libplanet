@@ -358,7 +358,6 @@ namespace Libplanet.Net
                         Options.RefreshPeriod,
                         Options.RefreshLifespan,
                         _cancellationToken));
-                tasks.Add(RebuildConnectionAsync(TimeSpan.FromMinutes(30), _cancellationToken));
                 tasks.Add(Transport.StartAsync(_cancellationToken));
                 tasks.Add(BroadcastBlockAsync(broadcastBlockInterval, _cancellationToken));
                 tasks.Add(BroadcastTxAsync(broadcastTxInterval, _cancellationToken));
